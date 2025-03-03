@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telegram Template</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./images/Telegram_logo.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="chats">
+        <input type="text" id="search-chats" placeholder="Search" />
+        <ul id="chat-list"></ul>
+      </div>
+
+      <div id="resizer"></div>
+
+      <div class="chat-section">
+        <div id="chat-header">
+          <img id="chat-profile_img" alt="" />
+          <div>
+            <h2 id="chat-username"></h2>
+            <p id="chat-status">Online</p>
+          </div>
+        </div>
+
+        <div id="chat-window"></div>
+
+        <div id="sticker-sender">
+          <button id="send-sticker">😊 Stiker yuborish</button>
+        </div>
+
+        <div id="chat-input">
+          <input type="text" id="message-input" placeholder="Write a message" />
+
+          <div class="stickers">
+            <button id="sticker-button">🙂</button>
+            <div id="sticker-panel" class="hidden"></div>
+          </div>
+
+          <button id="send-message">&#10148;</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
