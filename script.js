@@ -210,6 +210,7 @@ const leftPanel = document.querySelector(".chats");
 const resizer = document.getElementById("resizer");
 const stickerButton = document.getElementById("sticker-button");
 const stickerPanel = document.getElementById("sticker-panel");
+const allUserItems = document.getElementsByClassName("user-item");
 
 let currentChat = null;
 let isResizing = false;
@@ -250,6 +251,7 @@ const renderUsers = (users) => {
     users.forEach((user) => {
       const userList_item = document.createElement("li");
       userList_item.classList.add("user_item");
+      userList_item.draggable = true;
       userList_item.innerHTML = `
         <img class="profile_img" src="${user.profileImg || defaultProfileImg}">
         <div>
@@ -359,5 +361,53 @@ stickerPanel.addEventListener("emoji-click", (event) => {
 
 stickerPanel.append(picker);
 
+// **User draggable**
+
+const addDragEvents = () => {
+  const allUserItems = document.getElementsByClassName("user_item");
+  Array.from(allUserItems).forEach((user) => {
+    user.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", user.innerText);
+      user.classList.add("dragging");
+    });
+
+    user.addEventListener("dragend", () => {
+      user.classList.remove("dragging");
+    });
+  });
+};
+
+chatList.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  const dragging = document.getElementsByClassName("dragging")[0];
+  const afterElement = getDragAfterElement(chatList, e.clientY);
+  if (afterElement == null) {
+    chatList.appendChild(dragging);
+  } else {
+    chatList.insertBefore(dragging, afterElement);
+  }
+});
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".user_item:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
+
 // Chatlarni render qilish
 renderUsers(users);
+addDragEvents();
