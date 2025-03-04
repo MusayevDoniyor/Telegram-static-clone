@@ -23,9 +23,171 @@ const users = [
   {
     id: 2,
     name: "Ali",
-    profileImg: "",
+    profileImg: "./images/avatars/avatar1.jpg",
     lastSeen: "last seen 5 minutes ago",
-    messages: [],
+    messages: [
+      { id: 201, text: "Hey bro, what's up?", time: "9:15 AM", sent: false },
+      {
+        id: 202,
+        text: "All good, working on a project.",
+        time: "9:16 AM",
+        sent: true,
+        read: true,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Shoxrux",
+    profileImg: "",
+    lastSeen: "online",
+    messages: [
+      {
+        id: 301,
+        text: "Let's meet at 5 PM.",
+        time: "11:45 AM",
+        sent: true,
+        read: true,
+      },
+      { id: 302, text: "Okay, see you then!", time: "11:50 AM", sent: false },
+    ],
+  },
+  {
+    id: 4,
+    name: "Olim",
+    profileImg: "",
+    lastSeen: "last seen 1 hour ago",
+    messages: [
+      {
+        id: 401,
+        text: "Did you finish the task?",
+        time: "2:30 PM",
+        sent: true,
+        read: false,
+      },
+      {
+        id: 402,
+        text: "Not yet, but almost done.",
+        time: "3:10 PM",
+        sent: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Ziyoda",
+    profileImg: "",
+    lastSeen: "typing...",
+    messages: [
+      {
+        id: 501,
+        text: "Where are you?",
+        time: "4:00 PM",
+        sent: true,
+        read: false,
+      },
+      {
+        id: 502,
+        text: "On my way, 5 mins left!",
+        time: "4:05 PM",
+        sent: false,
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Sardor",
+    profileImg: "",
+    lastSeen: "last seen yesterday",
+    messages: [
+      {
+        id: 601,
+        text: "Check your email.",
+        time: "8:45 AM",
+        sent: true,
+        read: true,
+      },
+      { id: 602, text: "Alright, I'll do that.", time: "9:00 AM", sent: false },
+    ],
+  },
+  {
+    id: 7,
+    name: "Madina",
+    profileImg: "",
+    lastSeen: "online",
+    messages: [
+      {
+        id: 701,
+        text: "Happy Birthday!",
+        time: "12:00 AM",
+        sent: true,
+        read: true,
+      },
+      { id: 702, text: "Thank you so much! 😊", time: "12:05 AM", sent: false },
+    ],
+  },
+  {
+    id: 8,
+    name: "Jasur",
+    profileImg: "./images/avatars/avatar1.jpg",
+    lastSeen: "last seen 30 minutes ago",
+    messages: [
+      {
+        id: 801,
+        text: "Are you coming to the party?",
+        time: "6:30 PM",
+        sent: true,
+        read: false,
+      },
+      {
+        id: 802,
+        text: "Yes, I'll be there by 7!",
+        time: "6:35 PM",
+        sent: false,
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Nodira",
+    profileImg: "",
+    lastSeen: "last seen recently",
+    messages: [
+      {
+        id: 901,
+        text: "Can you send me the notes?",
+        time: "10:15 AM",
+        sent: true,
+        read: true,
+      },
+      {
+        id: 902,
+        text: "Sure, give me a minute.",
+        time: "10:20 AM",
+        sent: false,
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "Bobur",
+    profileImg: "",
+    lastSeen: "last seen 2 hours ago",
+    messages: [
+      {
+        id: 1001,
+        text: "Let's play football tomorrow.",
+        time: "5:00 PM",
+        sent: true,
+        read: false,
+      },
+      {
+        id: 1002,
+        text: "Sounds great! What time?",
+        time: "5:10 PM",
+        sent: false,
+      },
+    ],
   },
 ];
 

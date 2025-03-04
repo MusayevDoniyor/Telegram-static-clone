@@ -68,11 +68,12 @@
 
 #search-chats {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   border: none;
+  box-shadow: 0 2px 5px #e0e0e0;
   border-radius: 10px;
   outline: none;
-  margin-top: 10px;
+  margin: 10px 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -392,4 +393,37 @@ emoji-picker {
     padding: 8px;
     font-size: 14px;
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Selection */
+::selection {
+  background: #7bb9ff;
 }
